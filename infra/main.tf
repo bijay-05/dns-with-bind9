@@ -25,7 +25,7 @@ resource "azurerm_subnet" "testsubnet" {
 }
 
 module "network_security" {
-    source = "./modules/vm_network_security"
+    source = "github.com/bijay-05/terraform-module-collection/azure/vm_network_security"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     subnet_id = azurerm_subnet.testsubnet.id
@@ -34,7 +34,7 @@ module "network_security" {
 }
 
 module "network_interface_a" {
-    source = "./modules/vm_network_interface"
+    source = "github.com/bijay-05/terraform-module-collection/azure/vm_network_interface"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     ip_name = "devtestipa"
@@ -43,7 +43,7 @@ module "network_interface_a" {
 }
 
 module "network_interface_b" {
-    source = "./modules/plain_vm_network_interface"
+    source = "github.com/bijay-05/terraform-module-collection/azure/plain_vm_network_interface"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     nic_name = "devtestnicb"
@@ -51,7 +51,7 @@ module "network_interface_b" {
 }
 
 module "linux_vm_a" {
-    source = "./modules/linuxvm"
+    source = "github.com/bijay-05/terraform-module-collection/azure/linuxvm"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     vm_name = "devtestvma"
@@ -61,7 +61,7 @@ module "linux_vm_a" {
 }
 
 module "linux_vm_b" {
-    source = "./modules/linuxvm"
+    source = "github.com/bijay-05/terraform-module-collection/azure/linuxvm"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     vm_name = "devtestvmb"
