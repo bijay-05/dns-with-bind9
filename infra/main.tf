@@ -58,6 +58,7 @@ module "linux_vm_a" {
     vm_size = "Standard_B2s"
     admin_username = "devusera"
     nic_id = module.network_interface_a.nic_id
+    public_key = "public/key/path"
 }
 
 module "linux_vm_b" {
@@ -68,4 +69,5 @@ module "linux_vm_b" {
     vm_size = "Standard_B1s"
     admin_username = "devuserb"
     nic_id = module.network_interface_b.nic_id
+    public_key = "public/key/path"
 }
