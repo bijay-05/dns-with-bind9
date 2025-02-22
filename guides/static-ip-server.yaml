@@ -1,0 +1,12 @@
+network:
+  renderer: networkd
+  ethernets:
+    ens33:
+      addresses:
+        - <ifconfig output>/24
+      nameservers:
+        addresses: [4.4.4.4,8.8.8.8]
+      routes:
+        - to: default
+          via: <ip r output>
+  version: 2
