@@ -92,4 +92,26 @@ $ ls -lrt
 ## make /etc/bind/zones
 $ sudo mkdir /etc/bind/zones
 $ sudo nano /etc/bind/zones/forward.zone.demon.com
+
+## forward.zone.demon.com
+## forward zone means lookup ip for fqdn
+## SOA, State of Authority
+## Administrative info about zone
+
+
+## ; Base forward zone file for demon.com
+## $TTL 2d
+## $ORIGIN demon.com
+##  @       IN      SOA     demon.com. admin@demon.com. (
+##                              2         ; Serial #This should be incremented every time we make changes
+##                          604800         ; Refresh #This is the time interval for the slave to check for changes from the master
+##                          86400         ; Retry # This is the time interval for the slave to retry to check for changes if the master is not reachable
+##                          2419200         ; Expire #This is the time interval for the slave to expire the zone if it cannot contact the master
+##                          604800 )       ; Negative Cache TTL #This is the time interval for the slave to cache the negative response from the master
+##  ;
+##  @       IN      NS      dns.demon.com. ; name server record which indicates the dns server as the authoritative server of this domain
+##  @       IN      A       192.168.122.190        
+##  dns     IN      A       192.168.122.190
+## mail     IN      A       192.168.122.188        
+##  www     IN      CNAME   demon.com.
 ```
