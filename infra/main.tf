@@ -48,6 +48,7 @@ module "network_interface_b" {
     rg_location = azurerm_resource_group.testrg.location
     nic_name = "devtestnicb"
     subnet_id = azurerm_subnet.testsubnet.id
+    ip_allocation_method = "Static"
 }
 
 module "linux_vm_a" {
